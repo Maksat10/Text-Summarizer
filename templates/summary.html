@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text Summarizer - Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="main">
+      <button class="button" id="back-btn" onclick="window.history.back()">Back</button>
+      <div class="flex-container">
+        <div class="original-text">
+          <h5>Original Text</h5>
+          <p>Reading Time: {{ final_reading_time }} minute</p>
+          <p>{{ ctext }}</p>
+        </div>
+        <div class="summarized-text">
+          <h5>Summarized Text</h5>
+          <p>Reading Time: <span>{{ summary_reading_time }} minute</span></p>
+          <p>{{ final_summary }}</p>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

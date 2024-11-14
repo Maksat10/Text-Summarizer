@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body class="body">
+    <header>
+      <h1>Text Summarizer Web App</h1>
+    </header>
+    <main>
+      <form class="form" method="POST" action="/process">
+        <div class="text-area">
+          <textarea name="input_text" required id="input-text" autofocus placeholder="Enter your text here..."></textarea>
+        </div>
+        <div class="controls">
+          <h3>Select your Algorithm</h3>
+          <select id="selector" name="model_choice">
+            <option value="default" selected>Default</option>
+            <option value="Frequency_based">Frequency-based</option>
+            <option value="luhn">Luhn</option>
+            <option value="Cosine_similarity">Cosine similarity</option>
+          </select>
+          <br>
+          <button class="button" id="clear-btn" type="button">Clear</button>
+          <button class="button" id="submit-btn" type="submit">Submit</button>
+        </div>
+      </form>
+      <form method="POST" action="/process_url">
+        <input  type="text" name="input_url" placeholder="Enter URL Here" required="true"  style="width:50%">
+         <button class="button" type="reset" value="reset">Clear</button>
+         <button class="button" type="submit" value="reset">Summarize</button>
+      </form>
+    </main>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
+
